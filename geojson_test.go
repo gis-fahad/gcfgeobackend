@@ -15,9 +15,9 @@ import (
 //}
 
 func TestGeneratePaseto(t *testing.T) {
-	//privateKey, publicKey := watoken.GenerateKey()
-	//fmt.Println(privateKey)
-	//fmt.Println(publicKey)
+	privateKey, publicKey := watoken.GenerateKey()
+	fmt.Println(privateKey)
+	fmt.Println(publicKey)
 	hasil, err := watoken.Encode("fahad", "PrivateKey")
 	fmt.Println(hasil, err)
 }
@@ -46,7 +46,7 @@ func TestInsertUser(t *testing.T) {
 	conn := GetConnectionMongo("MONGOSTRING", "GismongoDB")
 	pass, _ := pasproj.HashPass("fahad")
 	data := RegisterStruct{
-		Username: "fahad",
+		Username: "fahadwell",
 		Password: pass,
 	}
 	ins := InsertUserdata(conn, data.Username, data.Password)
